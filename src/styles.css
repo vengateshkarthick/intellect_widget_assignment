@@ -1,4 +1,187 @@
-.App {
-  font-family: sans-serif;
+* {
+  font-family: "Poppins",sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --slider-color : #03fcc6;
+  --level-color: #f5d79a;
+  --widget-background: #396b5f; 
+}
+ .container-fluid {
+  height: 100vh;
+  
+ }
+.header {
+  border-radius: 3px;
+  font-size: 1.2rem;
+  position: sticky;
+  z-index: 3;
+  }
+
+  .well-being {
+    max-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .my-card {
+    min-height: 100%;
+    border: 0.15rem solid #fefefe;
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+.range-selector, .sleep-leveler {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 1px #fefefe;
+  background-color: var(--widget-background);
+  width: 275px;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
+}
+.range-selector input[type="range"] {
+  accent-color: var(--slider-color);
+  cursor: pointer;
+  width: 90%
+}
+
+
+.range-selector [type="range"]:focus {
+  accent-color: var(--slider-color);
+}
+
+.range-selector .circle {
+  width: 300px;
+  height: 300px;
+}
+.range-selector .outer-circle {
+ border-radius: 50%;
+ height: 250px;
+ width: 250px;
+ border: 0.2rem dashed wheat;
+}
+
+.range-selector .inner-circle {
+  /* border: 0.2rem solid wheat; */
+  position: relative;
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+}
+
+.range-selector .inner-circle::before {
+  content: "";
+  position: absolute;
+  height: 172px;
+  border: 0.1rem solid white;
+  width: 171px;
+  border-radius: 50%;
+  border: 1rem solid #dfcecee6;
+  background-color: var(--slider-color);
+}
+/* input[type="range"]::-webkit-slider-runnable-track{
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0.1rem solid #fff;
+  outline: 0.1rem solid #fff;
+  appearance: none;
+} */
+
+.range-value {
+  z-index: 1;
+  position: relative;
+  color: #fff;
+}
+
+
+.sleep-leveler {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 275px;
+  height: 330px;
+  padding: 1.5rem;
+}
+.sleep-leveler .poylgon {
+  cursor: pointer;
+  height: 2rem;
+  transition: background 50ms ease-in-out;
+  background-color: #dfcecee6;
+}
+.sleep-leveler .poylgon {
+    border-bottom-left-radius: 79px;
+    border-bottom-right-radius: 79px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
+}
+.poylgon:nth-child(3) {
+  margin: 0 10% 
+}
+.poylgon:nth-child(4) {
+  margin: 0 18% 
+}
+.poylgon:nth-child(5) {
+  margin: 0 27% 
+}
+.poylgon:nth-child(6) {
+  margin: 0 37%;
+  height: 2.5rem;
+  border-bottom-left-radius: 161px;
+  border-bottom-right-radius: 144px;
+  width: 64px;
+}
+
+.poylgon:hover {
+  background-color: var(--slider-color) !important;
+}
+
+.sleep-leveler .result {
+  background-color: transparent;
+    margin: 0;
+    height: max-content;
+    border: 0;
+    cursor: default;
+}
+.sleep-leveler .result:hover {
+  background-color: transparent !important;
+}
+
+.intro-img {
+  flex-basis: 50%;
+}
+
+.intro .meditation-img {
+  height: 300px;
+  width: auto;
+}
+
+.topic {
+  color: skyblue
+}
+
+.four-steps li {
+  list-style-type: none;
+  font-size: 16px;
+  text-align: start;
+  color : skyblue;
+}
+
+.quest {
+  color: skyblue;
   text-align: center;
+}
+
+.intro-img, .intro-motivate {
+flex-basis: 45%;
+}
+
+.anexity-intro {
+  flex-basis: 70%;
+  color: skyblue;
+}
+
+.quality {
+  color: rebeccapurple;
 }
