@@ -167,6 +167,9 @@
   text-align: start;
   color : skyblue;
 }
+.four-steps li strong {
+  color: rebeccapurple;
+}
 
 .quest {
   color: skyblue;
@@ -183,5 +186,5 @@ flex-basis: 45%;
 }
 
 .quality {
-  color: rebeccapurple;
+  
 }

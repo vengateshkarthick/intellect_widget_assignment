@@ -8,13 +8,13 @@ import SleepLevel from './SleepLevel';
 const AccessWellBeing  = () =>  {
   const [selectedLevel, setSelectedLevel] = useState(0);
   const [selectedRange, setSelectedRange] = useState(0);
-  const qualityOfSleep = useMemo(() => {
-    let range = "Rating yourself will give a better understanding.."
+  const [qualityOfSleep, rank] = useMemo(() => {
+    let range = ["Rating yourself will give a better understanding..", 0]
     if (selectedLevel && selectedRange ) {
       
-       if(selectedRange <=5 || selectedLevel <=2  ) range = "Ohoo kindly consult your doctor" 
-       else if (selectedRange <= 7 || selectedLevel <=4 ) range = "Listening to good music will still increase your sleep quality"
-       else if (selectedRange>=8 || selectedLevel === 5)range = "Nice to hear from you keep it up !"
+       if(selectedRange <=5 || selectedLevel <=2  ) range = ["Ohoo kindly consult your doctor", -1] 
+       else if (selectedRange <= 7 || selectedLevel <=4 ) range = ["Listening to good music will still increase your sleep quality", 1]
+       else if (selectedRange>=8 || selectedLevel === 5)range = ["Nice to hear from you keep it up !", 2]
     }
     return range;
   },[selectedLevel, selectedRange])
@@ -23,9 +23,15 @@ const AccessWellBeing  = () =>  {
     <div className="well-being">
         <IntroAntexity />
         <Intro />
-        <MeasureSleep selcetdRange={selectedRange} setSelectedRange={setSelectedRange}/>
-        <SleepLevel selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} />
-        <RateYourSelf qualityText={qualityOfSleep}/>
+        <RateYourSelf qualityText={qualityOfSleep} rank={rank} />
+        <div className="row row-cols-12">
+          <div className="col-6">
+             <MeasureSleep selcetdRange={selectedRange} setSelectedRange={setSelectedRange}/>
+          </div>
+          <div className="col-6">
+             <SleepLevel selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} />
+          </div>
+        </div>
     </div>
   )
 }
