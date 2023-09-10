@@ -9,7 +9,7 @@ describe('Testing MeasureSleep', () => {
   }
   test('Testing my MeasureSleep is present in dom or not', () => {
     render(<Measuresleep {...moc} />)
-    const textContent = screen.getByText("1. How was your sleep today");
+    const textContent = screen.getByText("1. How was your sleep yesterday's night");
     expect(textContent).toBeTruthy();
   });
   test('Checking the rangleHandler is called properly', () => {

@@ -11,29 +11,28 @@ describe('RateResult is working properly', () => {
         render(<RateResult {...mocProps} />);
         expect(mocProps.qualityText).toBeTruthy();
     });
-    test('Checking the content is working fine for range two', () => {
+    test('Checking the content is working fine for rank two', () => {
       mocProps.qualityText = "Nice to hear from you keep it up !";
-      mocProps.range = 2;
+      mocProps.rank = 2;
       render(<RateResult {...mocProps} />)
       const content = screen.getByRole('contentinfo');
       expect(content.innerHTML).toBe(`&nbsp;${mocProps.qualityText}&nbsp;`);
       expect(content.classList.contains("btn-success")).toBeTruthy();
     });
-     test('Checking the content is working fine for range One', () => {
+     test('Checking the content is working fine for rank One', () => {
       mocProps.qualityText = "Listening to good music will still increase your sleep quality";
-      mocProps.range = 1;
+      mocProps.rank = 1;
       render(<RateResult {...mocProps} />)
       const content = screen.getByRole('contentinfo');
       expect(content.innerHTML).toBe(`&nbsp;${mocProps.qualityText}&nbsp;`);
       expect(content.classList.contains("btn-secondary")).toBeTruthy();
     });
-     test('Checking the content is working fine for range Negative', () => {
+     test('Checking the content is working fine for rank Negative', () => {
       mocProps.qualityText = "Ohoo kindly consult your doctor";
-      mocProps.range = -1;
+      mocProps.rank = -1;
       render(<RateResult {...mocProps} />)
       const content = screen.getByRole('contentinfo');
       expect(content.innerHTML).toBe(`&nbsp;${mocProps.qualityText}&nbsp;`);
-      console.log(content.classList.values());
       expect(content.classList.contains("btn-danger")).toBeTruthy();
     })
 })

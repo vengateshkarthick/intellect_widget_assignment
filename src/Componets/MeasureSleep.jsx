@@ -9,7 +9,7 @@ const MeasureSleep = ({selcetdRange, setSelectedRange}) => {
     return (
         <div className='row row-cols-12 gap-2 justify-content-center align-items-center my-card p-1'> 
             <div className="col-12">
-                <p className='text-center fs-6 fw-bolder p-1 m-0'>1. How was your sleep today</p>
+                <p className='text-center fs-6 fw-bolder p-1 m-0'>1. How was your sleep yesterday's night</p>
             </div>
             <div className="col-12 range-selector">
                 <div className='row row-cols-12 align-items-center justify-content-center'>
